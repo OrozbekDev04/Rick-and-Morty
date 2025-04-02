@@ -54,17 +54,6 @@ export const CharacterList = ({ characters ,loading}: CharacterListProps) => {
           >
             ←
           </button>
-
-          {/* 📌 Генерируем номера страниц */}
-          {/* {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-            <button
-              key={page}
-              onClick={() => setCurrentPage(page)}
-              className={`px-3 py-2 border rounded ${currentPage === page ? "bg-blue-500 text-white" : "bg-gray-200"}`}
-            >
-              {page}
-            </button>
-          ))} */}
             {paginationRange?.map((page) => (
           <button 
             key={page} 
@@ -75,7 +64,6 @@ export const CharacterList = ({ characters ,loading}: CharacterListProps) => {
           </button>
         ))}
 
-          {/* Кнопка "Вперед" */}
           <button
             className="px-3 py-2 bg-gray-200 border rounded w-[40px] h-[40px] text-xl font-extrabold "
             onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
